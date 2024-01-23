@@ -8,9 +8,16 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base: "/Waze_test/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  build: {
+    assetsDir: 'assets',
+    entryFileNames: `assets/[name].js`,
+    chunkFileNames: `assets/[name].js`,
+    assetFileNames: `assets/[name].[ext]`
+  },
 })
